@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = 7000,
+    port = process.env.PORT,
     mongoose = require('mongoose'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
@@ -56,5 +56,5 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 app.listen(port, () => {
-    console.log(`YelpCamp started at http://localhost:${port}`);
+    console.log(`YelpCamp started at ${port}`);
 });
